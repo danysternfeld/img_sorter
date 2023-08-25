@@ -5,6 +5,7 @@ my $rootdir;
 
 GetOptions('in=s' => \$infile, 'out=s'=> \$rootdir ) or die "USAGE...";
 $infile = "..\\..\\ExtShoots_testData - Sheet1.csv";
+$rootdir = "..\\..\\Pictures\\images";
 open(IN,$infile) or die "FAILED to open $infile";
 my @inlines = <IN>;
 #print "@inlines\n";
@@ -24,6 +25,10 @@ foreach my $line (@inlines){
         $classnum = $1;
         $minnum = $2;
     } 
-
+    my $dir = "$rootdir\\$classnum";
+    if(!-e $dir){
+        mkdir($dir) || die;
+    }
+    
     print "$line-- $classnum -- $minnum -- $maxnum -- \n";
 }
