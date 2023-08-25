@@ -7,13 +7,16 @@ my $rootdir;
 my $move;
 my $debug;
 GetOptions('in=s' => \$infile, 'out=s'=> \$rootdir,'move' =>\$move , 'debug'=>\$debug) or die "USAGE...";
-$infile = "..\\..\\ExtShoots_testData - Sheet1.csv";
-$rootdir = "..\\..\\Pictures\\images";
+# testing...
+#$infile = "..\\..\\ExtShoots_testData - Sheet1.csv";
+#$rootdir = "..\\..\\Pictures\\images";
 open(IN,$infile) or die "FAILED to open $infile";
 my @inlines = <IN>;
 print "@inlines\n" if $debug;
 chomp @inlines;
 foreach my $line (@inlines){
+    # parse the csv
+    # line can be a range in any order or single number 
     my $classnum = $1;
     my $minnum = $2;
     my $maxnum = $3;
@@ -23,6 +26,7 @@ foreach my $line (@inlines){
     $classnum = $1;
     $minnum = $2;
     $maxnum = $3;
+    # set the order right
     if($minnum > $maxnum){
         ($minnum,$maxnum) = ($maxnum,$minnum);
     }
@@ -32,7 +36,7 @@ foreach my $line (@inlines){
         $minnum = $2;
         $maxnum = undef;
     } 
-
+    # set dest dir
     my $dir = "$rootdir\\$classnum";
     if(!-e $dir){
         mkdir($dir) || die;
@@ -47,13 +51,16 @@ foreach my $line (@inlines){
            /(\d+)\./;
            my $imgnum = $1;
            if(!defined($maxnum)){
+            # just one number on the line - find file that matches
              push @files,$File::Find::name if (-f $File::Find::name and ($imgnum == $minnum));   
            } else {
+            # find files in a range
             push @files,$File::Find::name 
                 if (-f $File::Find::name and ($imgnum >= $minnum) and ($imgnum <= $maxnum));
            }
       }, @dirpath);
       foreach my $file (@files){
+        # copy or move ( copy is dedfault)
         if(!$move){
             copy($file,"$rootdir\\$dir");
         } else {
