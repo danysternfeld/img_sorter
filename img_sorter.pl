@@ -6,7 +6,7 @@ my $infile;
 my $rootdir;
 my $move;
 my $debug;
-GetOptions('in=s' => \$infile, 'out=s'=> \$rootdir,'move' =>\$move , 'debug'=>\$debug) or die "USAGE...";
+GetOptions('in=s' => \$infile, 'root=s'=> \$rootdir,'move' =>\$move , 'debug'=>\$debug) or die "USAGE...";
 # testing...
 #$infile = "..\\..\\ExtShoots_testData - Sheet1.csv";
 #$rootdir = "..\\..\\Pictures\\images";
