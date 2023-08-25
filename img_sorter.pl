@@ -16,12 +16,14 @@ foreach my $line (@inlines){
 #    print "--- $line ---\n";
     $line =~ /^\d/ or next;    
     $line =~ /(\d+),(\d+)[,\s]+(\d+)/;
+    $classnum = $1;
+    $minnum = $2;
+    $maxnum = $3;
     if(!defined($1)){
-        $line =~ /(\d+)*/;
-        print "=====> $1\n"
-    }
-    my $classnum = $1;
-    my $minnum = $2;
-    my $maxnum = $3;
+        $line =~ /(\d+),\s*(\d+)\s*/;
+        $classnum = $1;
+        $minnum = $2;
+    } 
+
     print "$line-- $classnum -- $minnum -- $maxnum -- \n";
 }
