@@ -2,6 +2,7 @@ use strict;
 use Getopt::Long;
 use File::Find;
 use File::Copy;
+use Cwd;
 my $infile;
 my $rootdir;
 my $move;
@@ -10,6 +11,22 @@ GetOptions('in=s' => \$infile, 'root=s'=> \$rootdir,'move' =>\$move , 'debug'=>\
 # testing...
 #$infile = "..\\..\\ExtShoots_testData - Sheet1.csv";
 #$rootdir = "..\\..\\Pictures\\images";
+if(!defined($rootdir)){
+    $rootdir = cwd();
+}
+if(!defined($infile)){
+    my @files;
+    my @dir;
+    push(@dir,$rootdir);
+    find(
+        sub{
+           push @files,$File::Find::name if (-f $File::Find::name &&  $File::Find::name =~/\.csv$/); 
+           print "$File::Find::name" if $debug;
+        },@dir
+    );
+    $infile = @files[0];
+    print "infile = $infile\n" if $debug;
+};
 open(IN,$infile) or die "FAILED to open $infile";
 my @inlines = <IN>;
 print "@inlines\n" if $debug;
