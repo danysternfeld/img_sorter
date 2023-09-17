@@ -5,7 +5,7 @@ import csv
 import re
 import shutil
 # usage: chdir to image directory. Place csv file there. run without arguments
-# OR: drag a folder onto this
+# OR: drag a folder onto this script
 
 def insensitive_glob(pattern):
     def either(c):
@@ -13,8 +13,12 @@ def insensitive_glob(pattern):
     return glob.glob(''.join(map(either, pattern)))
 
 # this supports dropping a folder onto this script
-if(len(sys.argv) > 1 ):
+if(len(sys.argv) > 1):
     os.chdir(sys.argv[1])
+    # write a log file to the working dir
+    sys.stdout =  open('img_sorter_out.txt', 'w')
+    
+ 
 
 rootdir = os.getcwd()
 infile =  glob.glob('*.csv')
