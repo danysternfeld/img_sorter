@@ -1,16 +1,20 @@
 import os
+import sys
 import glob
 import csv
 import re
 import shutil
 # usage: chdir to image directory. Place csv file there. run without arguments
+# OR: drag a folder onto this
 
 def insensitive_glob(pattern):
     def either(c):
         return '[%s%s]' % (c.lower(), c.upper()) if c.isalpha() else c
     return glob.glob(''.join(map(either, pattern)))
 
-
+# this supports dropping a folder onto this script
+if(len(sys.argv) > 1 ):
+    os.chdir(sys.argv[1])
 
 rootdir = os.getcwd()
 infile =  glob.glob('*.csv')
