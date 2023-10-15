@@ -29,6 +29,7 @@ import csv
 import re
 import shutil
 import traceback
+from icecream import ic
 
 def insensitive_glob(pattern):
     def either(c):
@@ -36,28 +37,12 @@ def insensitive_glob(pattern):
     return glob.glob(''.join(map(either, pattern)))
 
 
-def keepOpenIfNotDND():
+def keepOpenIfNotDND(isDND):
     if(not isDND):
         input("Press Enter to continue...")
 
-try:
-    # this supports dropping a folder onto this script
-    isDND = False
-    if(len(sys.argv) > 1):
-        os.chdir(sys.argv[1])
-        # write a log file to the working dir
-        sys.stdout =  open('img_sorter_out.txt', 'w')
-        isDND = True
-        
-    
-
-    rootdir = os.getcwd()
-    infile =  glob.glob('*.csv')
-    if(len(infile) > 1):
-        raise Exception("more than one csv file in dir ". rootdir)
-    elif(len(infile) == 0):
-        raise Exception("No input csv file in directory " + rootdir )
-    csvfile =  open(infile[0])
+def ParseCSVAndMoveFiles(infile):
+    csvfile =  open(infile)
     csvreader = csv.reader(csvfile)
     for row in csvreader:
         if( not row[0].isnumeric()): continue
@@ -91,11 +76,64 @@ try:
                     destfile = destdir+"\\"+imgfile
                     print("Moving " + imgfile + " to "+  destfile)
                     shutil.move(imgfile,destfile)
-                    keepOpenIfNotDND()
+
+
+##########################################################
+
+def ParseInfotxtAndMove():
+    info = open("info.txt",encoding="utf-8")
+    lines = info.readlines()
+    matches = 0
+    pattern = re.compile(r'(\d+).*(\d+)')
+    folderDict  = dict()
+    for line in lines:
+        # קוד הפרק: 32899 - שם הפרק: פתיחה 1
+        ic(line)
+        matchobj = pattern.search(line)
+        if matchobj == None:
+            continue
+        matches += 1
+        # skip the first match
+        if matches == 1 :
+            continue
+        ic(matchobj.group(1) + "--" + matchobj.group(2))
+        # class -> folder code
+        folderDict[matchobj.group(2)] = matchobj.group(1)
+    ic(folderDict)
+    # todo: iterate dirs and move files
+
+
+
+
+
+#########  main
+try:
+    # this supports dropping a folder onto this script
+    isDND = False
+    if(len(sys.argv) > 1):
+        os.chdir(sys.argv[1])
+        # write a log file to the working dir
+        sys.stdout =  open('img_sorter_out.txt', 'w')
+        isDND = True
+        
+    
+
+    rootdir = os.getcwd()
+    infile =  glob.glob('*.csv')
+    if(len(infile) > 1):
+        raise Exception("more than one csv file in dir ". rootdir)
+    elif(len(infile) == 1):
+        ParseCSVAndMoveFiles(infile[0])
+    else:
+        infile =  glob.glob('info.txt')
+        if(len(infile) == 0):
+            raise Exception("No input csv or info.txt file in directory " + rootdir )
+        ParseInfotxtAndMove()   
+    keepOpenIfNotDND(isDND)
 except Exception as err:
     print(f"Unexpected ERROR:\n {err=}, {type(err)=}")
     print("error is: "+ traceback.format_exc())
-    keepOpenIfNotDND()
+    keepOpenIfNotDND(isDND)
 
                 
 
