@@ -17,7 +17,10 @@
 # 2) In the upload staging area in the FTP dir, it uses info.txt to move files from class dirs
 # numbered 1,2,3,4 to coded dirs, e.g 3901 etc..
 # place sorted dirs from the previos step in the FTP dir and drag it to the script.
-
+#
+# 1 and 2 can be combined - place info,txt and csv file in image directory and
+# the final directories will be created.
+#
 # usage: chdir to image directory with a cvs file or FTP directory. Run without arguments
 # OR: drag a folder onto this script
 #
@@ -143,16 +146,17 @@ def doDND():
     
 def ChooseModeAndRun():
     rootdir = os.getcwd()
-    infile =  glob.glob('*.csv')
+    inputs = 0
+    infile =  glob.glob('*.csv')    
     if(len(infile) > 1):
         raise Exception("more than one csv file in dir ". rootdir)
-    elif(len(infile) == 1):
+    if(len(infile) == 1):
+        inputs += 1
         ParseCSVAndMoveFiles(infile[0])
-    else:
-        infile =  glob.glob('info.txt')
-        if(len(infile) == 0):
-            raise Exception("No input csv or info.txt file in directory " + rootdir )
-        ParseInfotxtAndMove()   
+    infile =  glob.glob('info.txt')
+    if(len(infile) == 0) and inputs == 0 :
+        raise Exception("No input csv or info.txt file in directory " + rootdir )
+    ParseInfotxtAndMove()   
 
 
 ###############
