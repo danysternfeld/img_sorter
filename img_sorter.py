@@ -78,7 +78,7 @@ def ParseCSVAndMoveFiles(infile):
                 filenum = matchObj.group()
                 if(int(filenum) >= int(min) and int(filenum) <= int(max)):
                     destfile = destdir+"\\"+imgfile
-                    print("Moving " + imgfile + " to "+  destfile)
+                    print("Moving " + imgfile + " to " +  destfile)
                     shutil.move(imgfile,destfile)
 
 
@@ -91,7 +91,7 @@ def ParseInfoTxt():
     folderDict  = dict()
     for line in lines:
         # קוד הפרק: 32899 - שם הפרק: פתיחה 1
-        print(line)
+        print(line,end = "")
         matchobj = pattern.search(line)
         if matchobj == None:
             continue
@@ -119,8 +119,9 @@ def ParseInfotxtAndMove():
                     srcFile = classFolder + "/" + image
                     if os.path.exists(dstfile):
                         os.remove(dstfile)
-                    print(srcFile)
+                    print("Moving " + srcFile + " to " + dstdir )
                     shutil.move( srcFile, dstdir)
+                print("Removing empty dir " + classFolder)    
                 os.rmdir(classFolder)
             
 
