@@ -1,7 +1,8 @@
 # Copyright 2023 by Dany Sternfeld.
 # All rights reserved.
 #
-# This script uses a csv file to sort images in a folder into their own folders,
+# This script does two things:
+# 1) uses a csv file to sort images in a folder into their own folders,
 # to ease the upload process of images to TotalPrint
 # Here's a sample csv:
 # תמונות , כיתה  
@@ -12,7 +13,12 @@
 # first column is the class number and the second column is either one image number or
 # a range of image numbers.
 #
-# usage: chdir to image directory. Place csv file there. run without arguments
+#
+# 2) In the upload staging area in the FTP dir, it uses info.txt to move files from class dirs
+# numbered 1,2,3,4 to coded dirs, e.g 3901 etc..
+# place sorted dirs from the previos step in the FTP dir and drag it to the script.
+
+# usage: chdir to image directory with a cvs file or FTP directory. Run without arguments
 # OR: drag a folder onto this script
 #
 # to enable drag and drop in windows, make sure .py files are
