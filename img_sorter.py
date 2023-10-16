@@ -111,18 +111,19 @@ def ParseInfotxtAndMove():
     for classFolder in folderDict:
         if os.path.exists(classFolder):
             codeFolder = folderDict[classFolder]
-            if os.path.exists(codeFolder) :
-                images = os.listdir(classFolder)
-                for image in images :
-                    dstdir = codeFolder + "/Group/"
-                    dstfile = dstdir + image
-                    srcFile = classFolder + "/" + image
-                    if os.path.exists(dstfile):
-                        os.remove(dstfile)
-                    print("Moving " + srcFile + " to " + dstdir )
-                    shutil.move( srcFile, dstdir)
-                print("Removing empty dir " + classFolder)    
-                os.rmdir(classFolder)
+            images = os.listdir(classFolder)
+            for image in images :
+                dstdir = codeFolder + "/Group/"
+                if(not os.path.exists(dstdir)):
+                    os.makedirs(dstdir)
+                dstfile = dstdir + image
+                srcFile = classFolder + "/" + image
+                if os.path.exists(dstfile):
+                    os.remove(dstfile)
+                print("Moving " + srcFile + " to " + dstdir )
+                shutil.move( srcFile, dstdir)
+            print("Removing empty dir " + classFolder)    
+            os.rmdir(classFolder)
             
 
 
