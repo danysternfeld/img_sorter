@@ -21,7 +21,6 @@
 # @="{60254CA5-953B-11CF-8C96-00AA00B8708C}"
 #
 # When drag and drop is used, a log file is written to the dropped folder.
-
 import os
 import sys
 import glob
@@ -29,7 +28,6 @@ import csv
 import re
 import shutil
 import traceback
-from icecream import ic
 
 def insensitive_glob(pattern):
     def either(c):
@@ -38,7 +36,7 @@ def insensitive_glob(pattern):
 
 
 def keepOpenIfNotDND(isDND):
-    if(not isDND):
+    if(not isDND ):
         input("Press Enter to continue...")
 
 def ParseCSVAndMoveFiles(infile):
@@ -79,8 +77,7 @@ def ParseCSVAndMoveFiles(infile):
 
 
 ##########################################################
-
-def ParseInfotxtAndMove():
+def ParseInfoTxt():
     info = open("info.txt",encoding="utf-8")
     lines = info.readlines()
     matches = 0
@@ -88,7 +85,7 @@ def ParseInfotxtAndMove():
     folderDict  = dict()
     for line in lines:
         # קוד הפרק: 32899 - שם הפרק: פתיחה 1
-        ic(line)
+        print(line)
         matchobj = pattern.search(line)
         if matchobj == None:
             continue
@@ -96,28 +93,47 @@ def ParseInfotxtAndMove():
         # skip the first match
         if matches == 1 :
             continue
-        ic(matchobj.group(1) + "--" + matchobj.group(2))
         # class -> folder code
         folderDict[matchobj.group(2)] = matchobj.group(1)
-    ic(folderDict)
-    # todo: iterate dirs and move files
+    return folderDict
 
 
 
 
+def ParseInfotxtAndMove():
+    folderDict = ParseInfoTxt()
+    for classFolder in folderDict:
+        if os.path.exists(classFolder):
+            codeFolder = folderDict[classFolder]
+            if os.path.exists(codeFolder) :
+                images = os.listdir(classFolder)
+                for image in images :
+                    dstdir = codeFolder + "/Group/"
+                    dstfile = dstdir + image
+                    srcFile = classFolder + "/" + image
+                    if os.path.exists(dstfile):
+                        os.remove(dstfile)
+                    print(srcFile)
+                    shutil.move( srcFile, dstdir)
+                os.rmdir(classFolder)
+            
 
-#########  main
-try:
+
+
+def doDND():
     # this supports dropping a folder onto this script
-    isDND = False
-    if(len(sys.argv) > 1):
+    isDND = False    
+    if(len(sys.argv) > 1 ):
+        #dir = 'C:\\Users\\danys\\OneDrive\\Documents\\scripts\\img_sorter\\Pictures\\staging\\FTP'
+        dir = sys.argv[1]
         os.chdir(sys.argv[1])
-        # write a log file to the working dir
-        sys.stdout =  open('img_sorter_out.txt', 'w')
+        os.chdir(dir)
         isDND = True
-        
+        # write a log file to the working dir
+        sys.stdout =  open('img_sorter_out.txt', 'w', encoding='utf-8')
+    return isDND
     
-
+def ChooseModeAndRun():
     rootdir = os.getcwd()
     infile =  glob.glob('*.csv')
     if(len(infile) > 1):
@@ -129,6 +145,14 @@ try:
         if(len(infile) == 0):
             raise Exception("No input csv or info.txt file in directory " + rootdir )
         ParseInfotxtAndMove()   
+
+
+###############
+#########  main
+###############
+try:
+    isDND = doDND()
+    ChooseModeAndRun()
     keepOpenIfNotDND(isDND)
 except Exception as err:
     print(f"Unexpected ERROR:\n {err=}, {type(err)=}")
