@@ -149,7 +149,7 @@ def ChooseModeAndRun():
     inputs = 0
     infile =  glob.glob('*.csv')    
     if(len(infile) > 1):
-        raise Exception("more than one csv file in dir ". rootdir)
+        raise Exception("more than one csv file in dir " + rootdir)
     if(len(infile) == 1):
         inputs += 1
         ParseCSVAndMoveFiles(infile[0])
