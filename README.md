@@ -1,5 +1,3 @@
- Copyright 2023 by Dany Sternfeld.
- All rights reserved.
 
  This script does two things:
  1) uses a csv file to sort images in a folder into their own folders,
