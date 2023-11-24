@@ -49,7 +49,7 @@ def keepOpenIfNotDND(isDND):
         input("Press Enter to continue...")
 
 def ParseCSVAndMoveFiles(infile):
-    csvfile =  open(infile)
+    csvfile =  open(infile, encoding="utf8")
     csvreader = csv.reader(csvfile)
     for row in csvreader:
         if( not row[0].isnumeric()): continue
@@ -71,14 +71,12 @@ def ParseCSVAndMoveFiles(infile):
         destdir = ".\\" + classnum
         if(not os.path.exists(destdir)):
             os.makedirs(destdir)
-        imgfiles = insensitive_glob("img*")
-        # if no 'img* files found, try jpg's
-        if(len(imgfiles) == 0):
-            imgfiles = insensitive_glob("*.jpg")
+        imgfiles = insensitive_glob("*.jpg")
         for imgfile in imgfiles:
-            matchObj = re.search("\d+",imgfile)
+            matchObj = re.search(r"\d+.jpg",imgfile)
             if(not matchObj == None):
-                filenum = matchObj.group()
+                numOnlyMatch = re.search(r"\d+",matchObj.group())
+                filenum = numOnlyMatch.group()
                 if(int(filenum) >= int(min) and int(filenum) <= int(max)):
                     destfile = destdir+"\\"+imgfile
                     print("Moving " + imgfile + " to " +  destfile)
@@ -87,10 +85,10 @@ def ParseCSVAndMoveFiles(infile):
 
 ##########################################################
 def ParseInfoTxt():
-    info = open("info.txt",encoding="utf-8")
+    info = open("info.txt",encoding="utf8")
     lines = info.readlines()
     matches = 0
-    pattern = re.compile(r'(\d+).*(\d+)')
+    pattern = re.compile(r'(\d+)\D*(\d+)')
     folderDict  = dict()
     for line in lines:
         # קוד הפרק: 32899 - שם הפרק: פתיחה 1
@@ -103,7 +101,8 @@ def ParseInfoTxt():
         if matches == 1 :
             continue
         # class -> folder code
-        folderDict[matchobj.group(2)] = matchobj.group(1)
+        if(not matchobj.group(2) in folderDict.keys()):
+            folderDict[matchobj.group(2)] = matchobj.group(1)
     return folderDict
 
 
