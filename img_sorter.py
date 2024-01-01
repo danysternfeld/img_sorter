@@ -48,26 +48,58 @@ def keepOpenIfNotDND(isDND):
     if(not isDND ):
         input("Press Enter to continue...")
 
-def ParseCSVAndMoveFiles(infile):
+
+def checkOverlap(min1,max1,min2,max2):
+    if(
+        (min2 >= min1 and min2<= max1) or
+        (max2 >= min1 and max2 <= max1) or
+        (min1 >= min2 and min1 <= max2) or
+        (max1 >= min2 and max1 <= max2)
+    ):
+        return True
+    else:
+        print("no overlapp")
+        return False
+
+def parseCsv(infile):
+    ranges = []
     csvfile =  open(infile, encoding="utf8")
     csvreader = csv.reader(csvfile)
     for row in csvreader:
-        if( not row[0].isnumeric()): continue
-        print(row)
-        classnum = row[0]
-        images = row[1].split()
-        min = 0
-        max = 9999
-        if(len(images) > 1):
-            if(images[0] > images[1]):
-                min = images[1]
-                max = images[0]
+        for row in csvreader:
+            if( not row[0].isnumeric()): continue
+            print(row)
+            classnum = row[0]
+            images = row[1].split()
+            min = 0
+            max = 9999
+            if(len(images) > 1):
+                if(images[0] > images[1]):
+                    min = images[1]
+                    max = images[0]
+                else:
+                    min = images[0]
+                    max = images[1]
             else:
                 min = images[0]
-                max = images[1]
-        else:
-            min = images[0]
-            max = min
+                max = min
+            ranges.append([min,max,classnum])
+    for range1 in ranges:
+        for range2 in ranges:
+            if(range1[0] == range2[0] and range1[1] == range2[1]): 
+                continue
+            if(checkOverlap(range1[0],range1[1],range2[0],range2[1])):
+                raise Exception(f"Overlapping ranges in csv: range {range1[0]}-{range1[1]} overlapps {range2[0]}-{range2[1]}")
+    return ranges         
+
+
+
+def ParseCSVAndMoveFiles(infile):
+    ranges = parseCsv(infile)
+    for range in ranges:
+        min = range[0]
+        max = range[1]
+        classnum = range[2]
         destdir = ".\\" + classnum
         if(not os.path.exists(destdir)):
             os.makedirs(destdir)
