@@ -58,7 +58,6 @@ def checkOverlap(min1,max1,min2,max2):
     ):
         return True
     else:
-        print("no overlapp")
         return False
 
 def parseCsv(infile):
@@ -68,7 +67,6 @@ def parseCsv(infile):
     for row in csvreader:
         for row in csvreader:
             if( not row[0].isnumeric()): continue
-            print(row)
             classnum = row[0]
             images = row[1].split()
             min = 0
