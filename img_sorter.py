@@ -112,7 +112,7 @@ def ParseCSVAndMoveFiles(infile):
                 filenum = numOnlyMatch.group()
                 if(int(filenum) >= int(min) and int(filenum) <= int(max)):
                     destfile = destdir+"\\"+imgfile
-                    print("Moving " + imgfile + " to " +  destfile)
+                    print("Moving " + imgfile + " to " +  destfile+ f" - range is {min}..{max}")
                     shutil.move(imgfile,destfile)
 
 
