@@ -67,8 +67,11 @@ def parseCsv(infile):
     for row in csvreader:
         for row in csvreader:
             if( not row[0].isnumeric()): continue
-            classnum = row[0]
-            images = row[1].split()
+            classnum = int(row[0])
+            split_images = row[1].split()
+            images = []
+            for img in split_images:
+                images.append(int(img))
             min = 0
             max = 9999
             if(len(images) > 1):
@@ -164,9 +167,7 @@ def doDND():
     # this supports dropping a folder onto this script
     isDND = False    
     if(len(sys.argv) > 1 ):
-        #dir = 'C:\\Users\\danys\\OneDrive\\Documents\\scripts\\img_sorter\\Pictures\\staging\\FTP'
         dir = sys.argv[1]
-        os.chdir(sys.argv[1])
         os.chdir(dir)
         isDND = True
         # write a log file to the working dir
