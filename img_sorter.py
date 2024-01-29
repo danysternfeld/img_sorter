@@ -38,6 +38,8 @@ import re
 import shutil
 import traceback
 
+from cv2 import SUBDIV2D_PTLOC_OUTSIDE_RECT
+
 def insensitive_glob(pattern):
     def either(c):
         return '[%s%s]' % (c.lower(), c.upper()) if c.isalpha() else c
@@ -84,7 +86,17 @@ def parseCsv(infile):
             else:
                 min = images[0]
                 max = min
-            ranges.append([min,max,classnum])
+            # try to catch img counter reset    
+            if(9999 - max < 100 and min < 100  ):
+                new_ranges = splitRange(min,max)
+                for r in new_ranges:
+                    r.append(classnum)
+                    ranges.append(r)
+            # Try to catch typos such as 4452 454 ( ommision of a digit)
+            elif(max - min > 1000):
+                print(f"WARNING: Suspicios rang {min}-{max}  - IGNORED")
+            else:
+                ranges.append([min,max,classnum])
     for range1 in ranges:
         for range2 in ranges:
             if(range1[0] == range2[0] and range1[1] == range2[1]): 
@@ -92,6 +104,19 @@ def parseCsv(infile):
             if(checkOverlap(range1[0],range1[1],range2[0],range2[1])):
                 raise Exception(f"Overlapping ranges in csv: range {range1[0]}-{range1[1]} overlapps {range2[0]}-{range2[1]}")
     return ranges         
+
+# when a range crosses the 9999 boundary split it to two ranges
+# For example:
+# 9980-10 will become:
+# 9980-9999
+# 0-10
+def splitRange(min,max):
+    # swap min max
+    min,max = max,min
+    new_ranges = [[min,9999],[0,max]]
+    print(f"Splitting range {min}-{max} to {min}-9999 and 0-{max}")
+    return new_ranges
+                  
 
 
 
@@ -101,7 +126,7 @@ def ParseCSVAndMoveFiles(infile):
         min = range[0]
         max = range[1]
         classnum = range[2]
-        destdir = ".\\" + classnum
+        destdir = ".\\" + str(classnum)
         if(not os.path.exists(destdir)):
             os.makedirs(destdir)
         imgfiles = insensitive_glob("*.jpg")
@@ -142,6 +167,8 @@ def ParseInfoTxt():
 
 
 def ParseInfotxtAndMove():
+    if(not os.path.exists("info.txt")):
+        return
     folderDict = ParseInfoTxt()
     for classFolder in folderDict:
         if os.path.exists(classFolder):
