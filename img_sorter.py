@@ -133,8 +133,10 @@ def ParseCSVAndMoveFiles(infile):
         for imgfile in imgfiles:
             matchObj = re.search(r"\d+.jpg",imgfile)
             if(not matchObj == None):
+                filenum = 0
                 numOnlyMatch = re.search(r"\d+",matchObj.group())
-                filenum = numOnlyMatch.group()
+                if(numOnlyMatch != None):
+                    filenum = numOnlyMatch.group()
                 if(int(filenum) >= int(min) and int(filenum) <= int(max)):
                     destfile = destdir+"\\"+imgfile
                     print("Moving " + imgfile + " to " +  destfile+ f" - range is {min}..{max}")
