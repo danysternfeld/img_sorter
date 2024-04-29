@@ -94,7 +94,7 @@ def parseCsv(infile):
                     ranges.append(r)
             # Try to catch typos such as 4452 454 ( ommision of a digit)
             elif(max - min > 1000):
-                print(f"WARNING: Suspicios rang {min}-{max}  - IGNORED")
+                print(f"WARNING: Suspicios range {min}-{max}  - IGNORED")
             else:
                 ranges.append([min,max,classnum])
     for range1 in ranges:
