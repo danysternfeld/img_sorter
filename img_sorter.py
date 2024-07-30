@@ -21,6 +21,12 @@
 # 1 and 2 can be combined - place info,txt and csv file in image directory and
 # the final directories will be created.
 #
+# If the range crosses the 9999 boundary such that the 9999-max and min < 100 the script will
+# split the range to:
+#   max -> 9999
+#   0001 -> min
+# If the range is larger thatn 1000 it will be ignored.
+#
 # usage: chdir to image directory with a cvs file or FTP directory. Run without arguments
 # OR: drag a folder onto this script
 #

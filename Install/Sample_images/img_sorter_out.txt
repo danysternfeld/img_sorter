@@ -1,0 +1,168 @@
+Moving BenGurion_7_5_24-6240.jpg to .\3\BenGurion_7_5_24-6240.jpg - range is 6238..6250
+Moving BenGurion_7_5_24-6241.jpg to .\3\BenGurion_7_5_24-6241.jpg - range is 6238..6250
+Moving BenGurion_7_5_24-6243.jpg to .\3\BenGurion_7_5_24-6243.jpg - range is 6238..6250
+Moving BenGurion_7_5_24-6248.jpg to .\3\BenGurion_7_5_24-6248.jpg - range is 6238..6250
+Moving BenGurion_7_5_24-6250.jpg to .\3\BenGurion_7_5_24-6250.jpg - range is 6238..6250
+Moving BenGurion_7_5_24-6261.jpg to .\1\BenGurion_7_5_24-6261.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6262.jpg to .\1\BenGurion_7_5_24-6262.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6263.jpg to .\1\BenGurion_7_5_24-6263.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6264.jpg to .\1\BenGurion_7_5_24-6264.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6269.jpg to .\1\BenGurion_7_5_24-6269.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6270.jpg to .\1\BenGurion_7_5_24-6270.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6274.jpg to .\1\BenGurion_7_5_24-6274.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6276.jpg to .\1\BenGurion_7_5_24-6276.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6281.jpg to .\1\BenGurion_7_5_24-6281.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6282.jpg to .\1\BenGurion_7_5_24-6282.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6283.jpg to .\1\BenGurion_7_5_24-6283.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6284.jpg to .\1\BenGurion_7_5_24-6284.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6289.jpg to .\1\BenGurion_7_5_24-6289.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6290.jpg to .\1\BenGurion_7_5_24-6290.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6293.jpg to .\1\BenGurion_7_5_24-6293.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6295.jpg to .\1\BenGurion_7_5_24-6295.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6298.jpg to .\1\BenGurion_7_5_24-6298.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6300.jpg to .\1\BenGurion_7_5_24-6300.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6303.jpg to .\1\BenGurion_7_5_24-6303.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6304.jpg to .\1\BenGurion_7_5_24-6304.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6305.jpg to .\1\BenGurion_7_5_24-6305.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6306.jpg to .\1\BenGurion_7_5_24-6306.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6307.jpg to .\1\BenGurion_7_5_24-6307.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6308.jpg to .\1\BenGurion_7_5_24-6308.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6309.jpg to .\1\BenGurion_7_5_24-6309.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6310.jpg to .\1\BenGurion_7_5_24-6310.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6311.jpg to .\1\BenGurion_7_5_24-6311.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6366.jpg to .\1\BenGurion_7_5_24-6366.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6367.jpg to .\1\BenGurion_7_5_24-6367.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6368.jpg to .\1\BenGurion_7_5_24-6368.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6369.jpg to .\1\BenGurion_7_5_24-6369.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6370.jpg to .\1\BenGurion_7_5_24-6370.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6371.jpg to .\1\BenGurion_7_5_24-6371.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6372.jpg to .\1\BenGurion_7_5_24-6372.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6373.jpg to .\1\BenGurion_7_5_24-6373.jpg - range is 6251..6373
+Moving BenGurion_7_5_24-6377.jpg to .\2\BenGurion_7_5_24-6377.jpg - range is 6374..6383
+Moving BenGurion_7_5_24-6379.jpg to .\2\BenGurion_7_5_24-6379.jpg - range is 6374..6383
+Moving BenGurion_7_5_24-6380.jpg to .\2\BenGurion_7_5_24-6380.jpg - range is 6374..6383
+Moving BenGurion_7_5_24-6382.jpg to .\2\BenGurion_7_5_24-6382.jpg - range is 6374..6383
+Moving BenGurion_7_5_24-6383.jpg to .\2\BenGurion_7_5_24-6383.jpg - range is 6374..6383
+Moving BG_afula_15_5_24-7428.jpg to .\2\BG_afula_15_5_24-7428.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7430.jpg to .\2\BG_afula_15_5_24-7430.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7431.jpg to .\2\BG_afula_15_5_24-7431.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7433.jpg to .\2\BG_afula_15_5_24-7433.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7435.jpg to .\2\BG_afula_15_5_24-7435.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7451.jpg to .\2\BG_afula_15_5_24-7451.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7452.jpg to .\2\BG_afula_15_5_24-7452.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7453.jpg to .\2\BG_afula_15_5_24-7453.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7454.jpg to .\2\BG_afula_15_5_24-7454.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7458.jpg to .\2\BG_afula_15_5_24-7458.jpg - range is 7425..7468
+Moving BG_afula_15_5_24-7473.jpg to .\6\BG_afula_15_5_24-7473.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7474.jpg to .\6\BG_afula_15_5_24-7474.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7475.jpg to .\6\BG_afula_15_5_24-7475.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7476.jpg to .\6\BG_afula_15_5_24-7476.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7477.jpg to .\6\BG_afula_15_5_24-7477.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7478.jpg to .\6\BG_afula_15_5_24-7478.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7479.jpg to .\6\BG_afula_15_5_24-7479.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7487.jpg to .\6\BG_afula_15_5_24-7487.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7488.jpg to .\6\BG_afula_15_5_24-7488.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7489.jpg to .\6\BG_afula_15_5_24-7489.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7493.jpg to .\6\BG_afula_15_5_24-7493.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7494.jpg to .\6\BG_afula_15_5_24-7494.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7497.jpg to .\6\BG_afula_15_5_24-7497.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7498.jpg to .\6\BG_afula_15_5_24-7498.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7499.jpg to .\6\BG_afula_15_5_24-7499.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7500.jpg to .\6\BG_afula_15_5_24-7500.jpg - range is 7469..7501
+Moving BG_afula_15_5_24-7505.jpg to .\8\BG_afula_15_5_24-7505.jpg - range is 7502..7514
+Moving BG_afula_15_5_24-7506.jpg to .\8\BG_afula_15_5_24-7506.jpg - range is 7502..7514
+Moving BG_afula_15_5_24-7507.jpg to .\8\BG_afula_15_5_24-7507.jpg - range is 7502..7514
+Moving BG_afula_15_5_24-7508.jpg to .\8\BG_afula_15_5_24-7508.jpg - range is 7502..7514
+Moving BG_afula_15_5_24-7509.jpg to .\8\BG_afula_15_5_24-7509.jpg - range is 7502..7514
+קובץ מידע לבית ספר: תיכון אורט בן גוריון עפולה
+אינדקס הפרקים לפי קוד - שם התיקיה: 
+קוד הפרק: 36965 - שם הפרק: פתיחה 1
+קוד הפרק: 36966 - שם הפרק: כיתה 1
+קוד הפרק: 36967 - שם הפרק: כיתה 2
+קוד הפרק: 36968 - שם הפרק: כיתה 3
+קוד הפרק: 36969 - שם הפרק: כיתה 4
+קוד הפרק: 36970 - שם הפרק: כיתה 5
+קוד הפרק: 36971 - שם הפרק: כיתה 6
+קוד הפרק: 36972 - שם הפרק: כיתה 7
+קוד הפרק: 36973 - שם הפרק: כיתה 8
+Moving 1/BenGurion_7_5_24-6261.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6262.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6263.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6264.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6269.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6270.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6274.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6276.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6281.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6282.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6283.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6284.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6289.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6290.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6293.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6295.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6298.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6300.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6303.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6304.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6305.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6306.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6307.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6308.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6309.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6310.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6311.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6366.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6367.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6368.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6369.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6370.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6371.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6372.jpg to 36966/Group/
+Moving 1/BenGurion_7_5_24-6373.jpg to 36966/Group/
+Removing empty dir 1
+Moving 2/BenGurion_7_5_24-6377.jpg to 36967/Group/
+Moving 2/BenGurion_7_5_24-6379.jpg to 36967/Group/
+Moving 2/BenGurion_7_5_24-6380.jpg to 36967/Group/
+Moving 2/BenGurion_7_5_24-6382.jpg to 36967/Group/
+Moving 2/BenGurion_7_5_24-6383.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7428.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7430.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7431.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7433.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7435.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7451.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7452.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7453.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7454.jpg to 36967/Group/
+Moving 2/BG_afula_15_5_24-7458.jpg to 36967/Group/
+Removing empty dir 2
+Moving 3/BenGurion_7_5_24-6240.jpg to 36968/Group/
+Moving 3/BenGurion_7_5_24-6241.jpg to 36968/Group/
+Moving 3/BenGurion_7_5_24-6243.jpg to 36968/Group/
+Moving 3/BenGurion_7_5_24-6248.jpg to 36968/Group/
+Moving 3/BenGurion_7_5_24-6250.jpg to 36968/Group/
+Removing empty dir 3
+Moving 6/BG_afula_15_5_24-7473.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7474.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7475.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7476.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7477.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7478.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7479.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7487.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7488.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7489.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7493.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7494.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7497.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7498.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7499.jpg to 36971/Group/
+Moving 6/BG_afula_15_5_24-7500.jpg to 36971/Group/
+Removing empty dir 6
+Moving 8/BG_afula_15_5_24-7505.jpg to 36973/Group/
+Moving 8/BG_afula_15_5_24-7506.jpg to 36973/Group/
+Moving 8/BG_afula_15_5_24-7507.jpg to 36973/Group/
+Moving 8/BG_afula_15_5_24-7508.jpg to 36973/Group/
+Moving 8/BG_afula_15_5_24-7509.jpg to 36973/Group/
+Removing empty dir 8
