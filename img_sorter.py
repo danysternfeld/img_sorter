@@ -46,6 +46,9 @@ import traceback
 
 from cv2 import SUBDIV2D_PTLOC_OUTSIDE_RECT
 
+DEBUG = False
+
+
 def insensitive_glob(pattern):
     def either(c):
         return '[%s%s]' % (c.lower(), c.upper()) if c.isalpha() else c
@@ -100,7 +103,7 @@ def parseCsv(infile):
                     ranges.append(r)
             # Try to catch typos such as 4452 454 ( ommision of a digit)
             elif(max - min > 1000):
-                print(f"WARNING: Suspicios range {min}-{max}  - IGNORED")
+                print(f"WARNING: Suspicious range {min}-{max}  - IGNORED")
             else:
                 ranges.append([min,max,classnum])
     for range1 in ranges:
@@ -145,7 +148,8 @@ def ParseCSVAndMoveFiles(infile):
                     filenum = numOnlyMatch.group()
                 if(int(filenum) >= int(min) and int(filenum) <= int(max)):
                     destfile = destdir+"\\"+imgfile
-                    print("Moving " + imgfile + " to " +  destfile+ f" - range is {min}..{max}")
+                    if(DEBUG):
+                        print("Moving " + imgfile + " to " +  destfile+ f" - range is {min}..{max}")
                     shutil.move(imgfile,destfile)
 
 
@@ -158,7 +162,8 @@ def ParseInfoTxt():
     folderDict  = dict()
     for line in lines:
         # קוד הפרק: 32899 - שם הפרק: פתיחה 1
-        print(line,end = "")
+        if(DEBUG):
+            print(line,end = "")
         matchobj = pattern.search(line)
         if matchobj == None:
             continue
@@ -190,9 +195,11 @@ def ParseInfotxtAndMove():
                 srcFile = classFolder + "/" + image
                 if os.path.exists(dstfile):
                     os.remove(dstfile)
-                print("Moving " + srcFile + " to " + dstdir )
+                if(DEBUG):    
+                    print("Moving " + srcFile + " to " + dstdir )
                 shutil.move( srcFile, dstdir)
-            print("Removing empty dir " + classFolder)    
+            if(DEBUG):    
+                print("Removing empty dir " + classFolder)    
             os.rmdir(classFolder)
             
 
@@ -231,6 +238,7 @@ try:
     isDND = doDND()
     ChooseModeAndRun()
     keepOpenIfNotDND(isDND)
+    print("Completed successfully.")
 except Exception as err:
     print(f"Unexpected ERROR:\n {err=}, {type(err)=}")
     print("error is: "+ traceback.format_exc())
