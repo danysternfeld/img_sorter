@@ -11,7 +11,7 @@ if ($isadmin) {
 	$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
 	pip install -r requirements.txt
 	# create shortcut
-	python Make_shortcut.py
+	#python Make_shortcut.py
 	
 	
 	
