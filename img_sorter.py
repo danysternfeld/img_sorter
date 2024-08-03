@@ -47,6 +47,7 @@ import traceback
 from cv2 import SUBDIV2D_PTLOC_OUTSIDE_RECT
 
 DEBUG = False
+undo_list = {}
 
 
 def insensitive_glob(pattern):
@@ -135,7 +136,7 @@ def ParseCSVAndMoveFiles(infile):
         min = range[0]
         max = range[1]
         classnum = range[2]
-        destdir = ".\\" + str(classnum)
+        destdir = str(classnum)
         if(not os.path.exists(destdir)):
             os.makedirs(destdir)
         imgfiles = insensitive_glob("*.jpg")
@@ -151,6 +152,7 @@ def ParseCSVAndMoveFiles(infile):
                     if(DEBUG):
                         print("Moving " + imgfile + " to " +  destfile+ f" - range is {min}..{max}")
                     shutil.move(imgfile,destfile)
+                    undo_list[imgfile] = destdir+"\\"
 
 
 ##########################################################
@@ -198,11 +200,30 @@ def ParseInfotxtAndMove():
                 if(DEBUG):    
                     print("Moving " + srcFile + " to " + dstdir )
                 shutil.move( srcFile, dstdir)
+                undo_list[image] = dstdir
             if(DEBUG):    
                 print("Removing empty dir " + classFolder)    
             os.rmdir(classFolder)
             
 
+def create_undo():
+    dirlist = {}
+    if(len(undo_list.keys() ) >0 ):
+        with open('undo.bat', 'w') as f:
+            for imgfile in undo_list.keys():
+                dir = undo_list[imgfile]
+                windir = dir.replace("/","\\")
+                cmd = f"move {windir}{imgfile} .\n"
+                dirlist[windir] = 1
+                f.write(cmd)
+            f.write(":: remove dirs if empty\n")
+            for dir in dirlist.keys():
+                firstdir = dir.split("\\")[0]
+                cmd = f"dir /b /s /a \"{dir}\" | findstr .>nul || (\n  rmdir  /s /q {firstdir}\n)\n"
+                f.write(cmd)
+        f.close()
+            
+        
 
 
 def doDND():
@@ -228,7 +249,8 @@ def ChooseModeAndRun():
     infile =  glob.glob('info.txt')
     if(len(infile) == 0) and inputs == 0 :
         raise Exception("No input csv or info.txt file in directory " + rootdir )
-    ParseInfotxtAndMove()   
+    ParseInfotxtAndMove() 
+    create_undo()  
 
 
 ###############
