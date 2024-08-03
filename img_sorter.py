@@ -30,6 +30,8 @@
 # usage: chdir to image directory with a cvs file or FTP directory. Run without arguments
 # OR: drag a folder onto this script
 #
+#  An undo script is generated in the image source directory, named undo.bat
+#
 # to enable drag and drop in windows, make sure .py files are
 # associated with python and add this reg key:
 # [HKEY_CLASSES_ROOT\Python.File\shellex\DropHandler]
