@@ -18,6 +18,7 @@ OutputBaseFilename=ImageSorterSetup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+RestartIfNeededByRun=no
 
 [Run]
 Filename: "{app}\runme.bat"; 
