@@ -1,4 +1,4 @@
-
+A dedicated image sorter for use by Total Print photographers.
  This script does two things:
  1) uses a csv file to sort images in a folder into their own folders,
  to ease the upload process of images to TotalPrint
