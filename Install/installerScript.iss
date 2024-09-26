@@ -22,6 +22,7 @@ RestartIfNeededByRun=no
 
 [Run]
 Filename: "{app}\runme.bat"; 
+Filename: "{app}\add_to_explorer_menu.py}"
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
