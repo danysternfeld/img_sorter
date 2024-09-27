@@ -1,1 +1,4 @@
 */ImageSorterSetup.exe
+*.spec
+build/*
+dist/*

@@ -7,12 +7,12 @@
 AppId={{FC271A80-5B49-4DFB-95E5-0A398AE694CF}
 AppName=Image Sorter
 AppVersion=1.0
-;AppVerName=Image Sorter 1.0
+AppVerName=Image Sorter 1.0
 AppPublisher=Dany Sternfeld
-DefaultDirName={autopf}\Image Sorter
+DefaultDirName={autopf}\Image_Sorter
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
+PrivilegesRequired=lowest
 OutputDir=C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\InnoSetup
 OutputBaseFilename=ImageSorterSetup
 Compression=zip
@@ -21,8 +21,12 @@ WizardStyle=modern
 RestartIfNeededByRun=no
 
 [Run]
-Filename: "{app}\runme.bat"; 
-Filename: "{app}\add_to_explorer_menu.py}"
+; Filename: "{app}\runme.bat"; 
+Filename: "{app}\add_EXE_to_explorer_menu.exe";  Parameters: """{app}"""
+
+[UninstallRun]
+Filename: "{app}\remove_from_explorer_menu.exe" ; RunOnceId: "RemoveImageSorter"
+
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -31,16 +35,19 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; 
 
 [Files]
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\img_sorter.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\install.ps1"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\requirements.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\RunMe.bat"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\install\img_sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\install.ps1"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\requirements.txt"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\RunMe.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\Sample_images\*"; DestDir: "{app}\Sample_images"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\add_EXE_to_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\remove_from_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{autoprograms}\Image Sorter"; Filename: "{app}\img_sorter.py"
-Name: "{autodesktop}\Image Sorter"; Filename: "{app}\img_sorter.py"; 
+Name: "{autoprograms}\Image Sorter"; Filename: "{app}\img_sorter.exe"
+Name: "{autodesktop}\Image Sorter"; Filename: "{app}\img_sorter.exe"; 
 ;Tasks: desktopicon
 
 
