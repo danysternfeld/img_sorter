@@ -3,25 +3,6 @@ import winreg as wrg
 import sys  
 import os
 
-# def find(name, path):
-#     for root, dirs, files in os.walk(path):
-#         if name in files:
-#             return os.path.join(root, name)
-#     return None
-
-# def find_img_sorter():
-#     name = "img_sorter.exe"  
-#     appdata = os.environ["APPDATA"]  
-#     localappdata = appdata = os.environ["APPDATA"]
-#     our_location = os.path.dirname(os.path.abspath(__file__))
-#     places = [our_location,localappdata,appdata,r"C:\Program Files (x86)", r"c:\program files",fr"{our_location}\.."]
-#     for p in places:
-#         path = find(name,p)
-#         if(path):
-#             return os.path.abspath(rf"{path}")
-#     return None    
-
-
 location = wrg.HKEY_CURRENT_USER 
 #img_sorter_path = find_img_sorter()
 mypath = sys.argv[1] + r"\img_sorter.exe"
