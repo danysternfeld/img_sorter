@@ -261,7 +261,6 @@ def ChooseModeAndRun():
 try:
     isDND = doDND()
     ChooseModeAndRun()
-    keepOpenIfNotDND(isDND)
     print("Completed successfully.")
 except Exception as err:
     print(f"Unexpected ERROR:\n {err=}, {type(err)=}")

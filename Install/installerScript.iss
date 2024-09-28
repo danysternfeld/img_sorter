@@ -22,10 +22,10 @@ RestartIfNeededByRun=no
 
 [Run]
 ; Filename: "{app}\runme.bat"; 
-Filename: "{app}\add_EXE_to_explorer_menu.exe";  Parameters: """{app}"""
+;Filename: "{app}\add_EXE_to_explorer_menu.exe";  Parameters: """{app}"""
 
 [UninstallRun]
-Filename: "{app}\remove_from_explorer_menu.exe" ; RunOnceId: "RemoveImageSorter"
+;Filename: "{app}\remove_from_explorer_menu.exe" ; RunOnceId: "RemoveImageSorter"
 
 
 [Languages]
@@ -40,8 +40,8 @@ Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\install
 ;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\requirements.txt"; DestDir: "{app}"; Flags: ignoreversion
 ;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\RunMe.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\Sample_images\*"; DestDir: "{app}\Sample_images"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\add_EXE_to_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\remove_from_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\add_EXE_to_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\remove_from_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
@@ -50,5 +50,8 @@ Name: "{autoprograms}\Image Sorter"; Filename: "{app}\img_sorter.exe"
 Name: "{autodesktop}\Image Sorter"; Filename: "{app}\img_sorter.exe"; 
 ;Tasks: desktopicon
 
-
+[Registry]
+Root: HKCU; Subkey: "Software\Classes\Directory\Background\Shell"; 
+Root: HKCU; Subkey: "Software\Classes\Directory\Background\Shell\Image Sorter"; Flags: uninsdeletekey ; ValueType: string; ValueName: "Icon"; ValueData: "{app}\img_sorter.exe"
+Root: HKCU; Subkey: "Software\Classes\Directory\Background\Shell\Image Sorter\Command"; Flags: uninsdeletekey ; ValueType: string; ValueName: ""; ValueData: "{app}\img_sorter.exe"
 
