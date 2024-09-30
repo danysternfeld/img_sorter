@@ -13,7 +13,7 @@ DefaultDirName={autopf}\Image_Sorter
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\InnoSetup
+OutputDir=..\InnoSetup
 OutputBaseFilename=ImageSorterSetup
 Compression=zip
 SolidCompression=yes
@@ -35,11 +35,11 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; 
 
 [Files]
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\install\img_sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "img_sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
 ;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\install.ps1"; DestDir: "{app}"; Flags: ignoreversion
 ;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\requirements.txt"; DestDir: "{app}"; Flags: ignoreversion
 ;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\RunMe.bat"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\Sample_images\*"; DestDir: "{app}\Sample_images"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Sample_images\*"; DestDir: "{app}\Sample_images"; Flags: ignoreversion recursesubdirs createallsubdirs
 ;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\add_EXE_to_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ;Source: "C:\Users\danys\OneDrive\Documents\scripts\img_sorter\img_sorter\Install\remove_from_explorer_menu.exe"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
