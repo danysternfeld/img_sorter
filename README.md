@@ -28,3 +28,6 @@ A dedicated image sorter for use by Total Print photographers.
  @="{60254CA5-953B-11CF-8C96-00AA00B8708C}"
 
  When drag and drop is used, a log file is written to the dropped folder.
+
+
+ More info (Hebrew) : https://www.danysternfeld.com/tp-img-sort-cheatsheet
