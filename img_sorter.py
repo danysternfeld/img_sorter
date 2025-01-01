@@ -46,7 +46,6 @@ import re
 import shutil
 import traceback
 
-from cv2 import SUBDIV2D_PTLOC_OUTSIDE_RECT
 
 DEBUG = False
 undo_list = {}
