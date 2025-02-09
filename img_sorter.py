@@ -142,7 +142,7 @@ def ParseCSVAndMoveFiles(infile):
             os.makedirs(destdir)
         imgfiles = insensitive_glob("*.jpg")
         for imgfile in imgfiles:
-            matchObj = re.search(r"\d+(-Enhanced-NR)*.jpg",imgfile)
+            matchObj = re.search(r"\d+(-Enhanced-NR)*.jpg",imgfile,re.IGNORECASE)
             if(not matchObj == None):
                 filenum = 0
                 numOnlyMatch = re.search(r"\d+",matchObj.group())
